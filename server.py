@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "You are connected to a server! -- Test"
+    return "You are connected to a server!"
 
 if os.getenv("ENV") == "dev" :
     app.run(debug=True)
