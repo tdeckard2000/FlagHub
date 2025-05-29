@@ -24,4 +24,4 @@ How to setup the project locally
 How to run the server (locally or on pi)
 1. If on Windows, start a linux instance in the terminal. Run "wsl"
 2. Navigate to the project folder.
-3. Run "make server"
+3. For development run "make dev". For production run "make server".
