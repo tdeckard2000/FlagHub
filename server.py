@@ -1,10 +1,10 @@
 import os
 import json
-import time
 import threading
-from flask import Flask, request
 import platform
 import atexit
+from datetime import datetime
+from flask import Flask, request
 
 
 def setupGPIO():
@@ -15,8 +15,18 @@ def setupGPIO():
     GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     def send_UART_test(pin):
+        exampleMessage = {
+            '_id': 464367616,
+            'image': 'pojgsoigj4903gjeogj9w0agjsrdgljdlsgjdgloj4903gjjsrgsdgjb87yt78346584INihgsihg98434',
+            'isOpen': 0,
+            'tempF': 68,
+            'hubDate': datetime.now().isoformat(),
+            'date': '2025-01-01T14:06:00Z',
+            'nextCheckIn': 86400,
+            'batteryV': 1.21
+        }
         print("Sending UART message...")
-        ser.write(b'Hello ESP32\n')
+        ser.write(json.dumps(exampleMessage).encode())
         # ser.close()
     GPIO.add_event_detect(
         17, GPIO.FALLING, callback=send_UART_test, bouncetime=200)
