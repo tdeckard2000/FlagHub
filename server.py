@@ -52,7 +52,9 @@ def home():
 @app.route('/upload', methods=['POST'])
 def upload():
     data = request.get_data()
-    print('received', data)
-    parsed = json.loads(data)
-    print('parsedImage', parsed['image'])
+    # print('received', data)
+    header, image = data.split(b'image:', 1)
+    header_text = header.decode('utf-8')
+    print('image', image)
+    print('header_text', header_text)
     return 'Got Post'
