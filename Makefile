@@ -3,3 +3,6 @@ server:
 
 dev:
 	ENV=dev venv/bin/python3 server.py
+
+killServer:
+	sudo pkill gunicorn || true
