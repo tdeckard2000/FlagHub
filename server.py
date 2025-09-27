@@ -7,7 +7,6 @@ import requests
 from datetime import datetime
 from flask import Flask, request
 
-
 # def setupGPIO():
 #     import RPi.GPIO as GPIO
 #     import serial
@@ -55,11 +54,11 @@ def forwardMessageToCloud(flagCamMessage):
             timeout=30
         )
         if res.status_code == 200:
-            print("Forwarded message to cloud successfully.")
+            print('Forwarded message to cloud successfully.')
         else:
-            print(f"Failed forwarding message to cloud.")
+            print(f'Failed forwarding message to cloud.')
     except requests.exceptions.RequestException as e:
-        print(f"Error forwarding message to cloud: {e}")
+        print(f'Error forwarding message to cloud: {e}')
 
 @app.route('/')
 def home():
@@ -75,3 +74,5 @@ def upload():
     print('Received message from', header_text)
     forwardMessageToCloud(flagCamMessage)
     return 'Got Post'
+
+print('FlagHub server started successfully.')

@@ -75,3 +75,4 @@ Next, we need to setup the wifi credentials.
   - SSH into the FlagHub 'ssh piClient' 
   - Run 'make killServer' to stop the server.
   - Reboot the FlagHub to start the server up again normally, or run 'make server' to watch logs.
+  - 
