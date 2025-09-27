@@ -47,7 +47,7 @@ if os.getenv('ENV') == 'dev':
 def forwardMessageToCloud(flagCamMessage):
     try:
         res = requests.post(
-            'http://98.89.89.6/data',
+            'http://98.89.89.6/api/device/data',
             data=flagCamMessage,
             headers={
                 'Content-Type': 'application/octet-stream'
